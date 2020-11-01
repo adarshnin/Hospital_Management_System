@@ -2,9 +2,9 @@
 
 Team:
 
-● Adarsh Ninganur - 111803115
+ Adarsh Ninganur - 111803115
 
-● Aryan Prasad - 111803116
+ Aryan Prasad - 111803116
 
 Project Statement:
 
@@ -19,6 +19,7 @@ Hospital Management System handles the basic management of the patient and docto
 of the hospital, helping them to retrieve information easily and adding new information to the database.
 
 FrontEnd: HTML, CSS, BootStrap
+
 BackEnd: Flask, SQLite(Database), JavaScript, Python
 
 Functional Requirements:
