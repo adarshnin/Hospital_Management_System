@@ -1,6 +1,6 @@
 # Hospital_Management_System
 
-Team:
+**Team:**
 
 Adarsh Ninganur - 111803115
 
