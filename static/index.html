@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <meta name="description" content="Bootstrap Admin App + jQuery">
+   <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+   <title>HMS</title>
+   <!-- =============== VENDOR STYLES ===============-->
+   <!-- FONT AWESOME-->
+   <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+   <!-- SIMPLE LINE ICONS-->
+   <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <!-- ANIMATE.CSS-->
+   <link rel="stylesheet" href="vendor/animate.css/animate.min.css">
+   <!-- WHIRL (spinners)-->
+   <link rel="stylesheet" href="vendor/whirl/dist/whirl.css">
+   <!-- =============== PAGE VENDOR STYLES ===============-->
+   <!-- =============== BOOTSTRAP STYLES ===============-->
+   <link rel="stylesheet" href="app/css/bootstrap.css" id="bscss">
+   <!-- =============== APP STYLES ===============-->
+   <link rel="stylesheet" href="app/css/app.css" id="maincss">
+   <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+   <style>
+      a:hover {
+         text-decoration: none !important;
+      }
+
+      html {
+         position: relative;
+         /* Allows the footer to notice content height */
+         min-height: 100vh;
+         /* My page will always take the full screen */
+      }
+
+      footer {
+         position: absolute;
+         bottom: 0;
+         /* I want to be on the bottom... */
+         left: 0;
+         /* ...and to the left */
+      }
+
+      body {
+         background-image: url("/images/hospital.png");
+         background-repeat: no-repeat;
+         background-size: cover;
+
+      }
+
+      h1 {
+         color: navy;
+      }
+
+      .content-heading,
+      section {
+         background-image: url("/images/dark.png");
+      }
+   </style>
+</head>
+
+<body class="layout-h">
+   <div class="wrapper">
+      <!-- top navbar-->
+      <header class="topnavbar-wrapper">
+         <!-- START Top Navbar-->
+         <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+               <div class="navbar-header">
+                  <a class="navbar-brand" href="#"><b>Hospital Management System</b></a>
+               </div>
+               <ul class="nav navbar-nav">
+                  <li class="active"><a href="#"><b>Home</b></a></li>
+               </ul>
+               <ul class="nav navbar-nav navbar-right">
+                  <li class="active"><a href="about_us.html"><b>Creators</b></a></li>
+               </ul>
+            </div>
+         </nav>
+         <!-- END Top Navbar-->
+      </header>
+      <!-- sidebar-->
+
+      <!-- offsidebar-->
+
+      <!-- Main section-->
+      <section>
+         <!-- Page content-->
+         <div class="content-wrapper">
+            <div class="content-heading">
+               <h1>  <i class="fa fa-h-square" style="font-size:32px;"></i> Dashboard</h1>
+               <small data-localize="dashboard.WELCOME"></small>
+            </div>
+
+            <div class="row">
+               <div class="row">
+                  <div class="col-lg-4 col-md-6">
+                     <!-- START widget-->
+                     <a href="patient.html">
+                        <div class="panel widget bg-success">
+                           <div class="row row-table">
+                              <div class="col-xs-4 text-center bg-gray-dark pv-lg">
+                                 <i class="fa fa-wheelchair" style="font-size:48px;"></i>
+                              </div>
+                              <div class="col-xs-8 pv-lg">
+                                 <div class="h1 m0 text-bold" id="patientcount"></div>
+                                 <div class="text-uppercase"><b>Patient</b></div>
+                              </div>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                     <a href="doctor.html">
+                        <!-- START widget-->
+                        <div class="panel widget bg-danger">
+                           <div class="row row-table">
+                              <div class="col-xs-4 text-center bg-gray-dark pv-lg">
+                                 <i class="fa fa-user-md" style="font-size:48px;"></i>
+                              </div>
+                              <div class="col-xs-8 pv-lg">
+                                 <div class="h1 m0 text-bold" id="doctorcount"></div>
+                                 <div class="text-uppercase"><b>Doctor</b></div>
+                              </div>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                     <a href="appointment.html">
+                        <!-- START widget-->
+                        <div class="panel widget bg-purple-dark">
+                           <div class="row row-table">
+                              <div class="col-xs-4 text-center bg-gray-dark pv-lg">
+                                 <em class="icon-pencil fa-3x"></em>
+                              </div>
+                              <div class="col-xs-8 pv-lg">
+                                 <div class="h1 m0 text-bold" id="appointmentcount"></div>
+                                 <div class="text-uppercase"><b>Appointment</b></div>
+                              </div>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                     <a href="medication.html">
+                        <!-- START widget-->
+                        <div class="panel widget bg-info">
+                           <div class="row row-table">
+                              <div class="col-xs-4 text-center bg-gray-dark pv-lg">
+                                 <em class="fas fa-capsules" style='font-size:48px'></em>
+                              </div>
+                              <div class="col-xs-8 pv-lg">
+                                 <div class="h1 m0 text-bold" id="medicationcount"></div>
+                                 <div class="text-uppercase"><b>Medication</b></div>
+                              </div>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                     <a href="nurse.html">
+                        <!-- START widget-->
+                        <div class="panel widget bg-gray-light">
+                           <div class="row row-table">
+                              <div class="col-xs-4 text-center bg-gray-dark pv-lg">
+                                 <em class="fas fa-user-nurse" style='font-size:48px'></em>
+                              </div>
+                              <div class="col-xs-8 pv-lg">
+                                 <div class="h1 m0 text-bold" id="nursecount"></div>
+                                 <div class="text-uppercase"><b>Nurse</b></div>
+                              </div>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                     <a href="department.html">
+                        <!-- START widget-->
+                        <div class="panel widget bg-warning">
+                           <div class="row row-table">
+                              <div class="col-xs-4 text-center bg-gray-dark pv-lg">
+                                 <em class="fas fa-briefcase-medical" style='font-size:48px'></em>
+                              </div>
+                              <div class="col-xs-8 pv-lg">
+                                 <div class="h1 m0 text-bold" id="departmentcount"></div>
+                                 <div class="text-uppercase"><b>Department</b></div>
+                              </div>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                     <a href="procedure.html">
+                        <!-- START widget-->
+                        <div class="panel widget bg-purple-light">
+                           <div class="row row-table">
+                              <div class="col-xs-4 text-center bg-gray-dark pv-lg">
+                                 <em class="fas fa-procedures" style='font-size:48px'></em>
+                              </div>
+                              <div class="col-xs-8 pv-lg">
+                                 <div class="h1 m0 text-bold" id="proccount"></div>
+                                 <div class="text-uppercase"><b>Procedure</b></div>
+                              </div>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                     <a href="room.html">
+                        <!-- START widget-->
+                        <div class="panel widget bg-green-dark">
+                           <div class="row row-table">
+                              <div class="col-xs-4 text-center bg-gray-dark pv-lg">
+                                 <em class="fas fa-hospital" style='font-size:48px'></em>
+                              </div>
+                              <div class="col-xs-8 pv-lg">
+                                 <div class="h1 m0 text-bold" id="roomcount"></div>
+                                 <div class="text-uppercase"><b>Room</b></div>
+                              </div>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                     <a href="prescribes.html">
+                        <!-- START widget-->
+                        <div class="panel widget bg-danger-light">
+                           <div class="row row-table">
+                              <div class="col-xs-4 text-center bg-gray-dark pv-lg">
+                                 <em class="fas fa-notes-medical" style='font-size:48px'></em>
+                              </div>
+                              <div class="col-xs-8 pv-lg">
+                                 <div class="h1 m0 text-bold" id="prescribescount"></div>
+                                 <div class="text-uppercase"><b>Prescribes</b></div>
+                              </div>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                     <a href="undergoes.html">
+                        <!-- START widget-->
+                        <div class="panel widget bg-info-dark">
+                           <div class="row row-table">
+                              <div class="col-xs-4 text-center bg-gray-dark pv-lg">
+                                 <em class="fas fa-syringe" style='font-size:48px'></em>
+                              </div>
+                              <div class="col-xs-8 pv-lg">
+                                 <div class="h1 m0 text-bold" id="undergoescount"></div>
+                                 <div class="text-uppercase"><b>Undergoes</b></div>
+                              </div>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Page footer-->
+      <footer style=  "color: #fff;">
+         <span>&copy; 2020 - Hospital Management System</span>
+       </footer>
+       
+
+   </div>
+   <!-- =============== VENDOR SCRIPTS ===============-->
+   <!-- MODERNIZR-->
+   <script src="vendor/modernizr/modernizr.custom.js"></script>
+   <!-- JQUERY-->
+   <script src="vendor/jquery/dist/jquery.js"></script>
+   <!-- BOOTSTRAP-->
+   <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+   <!-- STORAGE API-->
+   <script src="vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
+   <!-- JQUERY EASING-->
+   <script src="vendor/jquery.easing/js/jquery.easing.js"></script>
+   <!-- ANIMO-->
+   <script src="vendor/animo.js/animo.js"></script>
+   <!-- LOCALIZE-->
+   <script src="vendor/jquery-localize-i18n/dist/jquery.localize.js"></script>
+   <!-- =============== PAGE VENDOR SCRIPTS ===============-->
+   <!-- =============== APP SCRIPTS ===============-->
+   <script src="app/js/app.js"></script>
+   <script src="js/home.js"></script>
+</body>
+
+</html>

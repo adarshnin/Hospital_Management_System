@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <meta name="description" content="Bootstrap Admin App + jQuery">
+   <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+   <title>Department</title>
+   <!-- =============== VENDOR STYLES ===============-->
+   <!-- FONT AWESOME-->
+   <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+   <!-- SIMPLE LINE ICONS-->
+   <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+   <!-- ANIMATE.CSS-->
+   <link rel="stylesheet" href="vendor/animate.css/animate.min.css">
+   <!-- WHIRL (spinners)-->
+   <link rel="stylesheet" href="vendor/whirl/dist/whirl.css">
+   <link rel="stylesheet" href="vendor/sweetalert/dist/sweetalert.css">
+   <!-- DATATABLES-->
+   <link rel="stylesheet" href="vendor/datatables-colvis/css/dataTables.colVis.css">
+   <link rel="stylesheet" href="vendor/datatables/media/css/dataTables.bootstrap.css">
+   <link rel="stylesheet" href="vendor/dataTables.fontAwesome/index.css">
+
+
+   <!-- =============== PAGE VENDOR STYLES ===============-->
+   <!-- =============== BOOTSTRAP STYLES ===============-->
+   <link rel="stylesheet" href="app/css/bootstrap.css" id="bscss">
+   <link rel="stylesheet" href="vendor/datepicker/build/css/bootstrap-datetimepicker.min.css">
+   <!-- =============== APP STYLES ===============-->
+   <link rel="stylesheet" href="app/css/app.css" id="maincss">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <style>
+ a:hover {
+         text-decoration: none !important;
+      }
+
+      html {
+         position: relative;
+         /* Allows the footer to notice content height */
+         min-height: 100vh;
+         /* My page will always take the full screen */
+      }
+
+      footer {
+         position: absolute;
+         bottom: 0;
+         /* I want to be on the bottom... */
+         left: 0;
+         /* ...and to the left */
+      }
+
+      body {
+         background-image: url("/images/hospital.png");
+         background-repeat: no-repeat;
+         background-size: cover;
+
+      }
+
+      h1 {
+         color: navy;
+      }
+
+      .content-heading,
+      section {
+         background-image: url("/images/dark.png");
+      }
+    </style>
+</head>
+
+<body class="layout-h">
+   <div class="wrapper">
+      <!-- top navbar-->
+      <header class="topnavbar-wrapper">
+         <!-- START Top Navbar-->
+         <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+               <div class="navbar-header">
+                  <a class="navbar-brand" href="/"><b>Hospital Management System</b></a>
+               </div>
+               <ul class="nav navbar-nav">
+                  <li class="active"><a href="/"><b>Home</b></a></li>
+               </ul>
+               <ul class="nav navbar-nav navbar-right">
+                  <li class="active"><a href="about_us.html"><b>Creators</b></a></li>
+               </ul>
+            </div>
+         </nav>
+         <!-- END Top Navbar-->
+      </header>
+      <!-- sidebar-->
+
+      <!-- offsidebar-->
+
+      <!-- Main section-->
+      <section>
+         <!-- Page content-->
+         <div class="content-wrapper">
+            <div class="content-heading">
+               <!-- START Language list-->
+
+               <!-- END Language list    -->
+
+               <h1>Department</h1>
+
+               <small data-localize="dashboard.WELCOME"></small>
+               <div class="pull-right">
+                  <div class="btn-group">
+
+                     <button style="bottom: 27px;" id="adddepartment" class="mb-sm btn btn-primary" type="button">Add
+                     department</button>
+
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="panel panel-default" style="padding: 15px;">
+
+                     <div class="table-responsive">
+                        <table id="datatable4" class="table table-striped">
+                           <thead>
+                              <tr>
+                                 <th style="width:20%">Department ID</th> 
+                                 <th style="width:20%">Name</th>
+                                 <th style="width:25%">Head ID</th>
+                                 <th style="width:25%">First Name</th>
+                                 <th style="width:25%">Last Name</th>
+                                 <th style="width:15%"></th>
+                              </tr>
+                           </thead>
+                           <tbody></tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+   </div>
+
+   <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" data-dismiss="modal" aria-label="Close" class="close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+               <h4 id="myModalLabel" class="modal-title">Department</h4>
+            </div>
+            <div class="modal-body">
+               <form data-parsley-validate="" novalidate="" class="form-horizontal" id="detailform">
+                  <div class="form-group">
+                     <label class="col-lg-2 control-label">Department ID</label>
+                     <div class="col-lg-10">
+                        <input required type="text" name="department_id" class="form-control" placeholder="Department ID">
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-lg-2 control-label">Name</label>
+                     <div class="col-lg-10">
+                        <input required type="text" name="name" class="form-control" placeholder="Name of Department">
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-lg-2 control-label">Head ID</label>
+                     <div class="col-lg-10">
+                        <input required type="text" name="head_id" class="form-control" placeholder="Head of Department">
+                     </div>
+                  </div>
+               </form>
+            </div>
+            <div class="modal-footer">
+               <button class="btn btn-default" data-dismiss="modal" onClick="window.location.reload();">Close</button>
+               <button id="savethedepartment" type="button" class="btn btn-primary">Save changes</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <footer style=  "color: #fff;">
+      <span>&copy; 2020 - Hospital Management System</span>
+    </footer>
+   
+   <!-- =============== VENDOR SCRIPTS ===============-->
+   <!-- MODERNIZR-->
+   <script src="vendor/modernizr/modernizr.custom.js"></script>
+   <!-- JQUERY-->
+   <script src="vendor/jquery/dist/jquery.js"></script>
+   <!-- BOOTSTRAP-->
+   <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+   <script src="vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+   <script src="vendor/datatables-colvis/js/dataTables.colVis.js"></script>
+   <script src="vendor/datatables/media/js/dataTables.bootstrap.js"></script>
+   <script src="vendor/serialize/jquery.serializejson.js"></script>
+   <!-- STORAGE API-->
+   <script src="vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
+   <!-- JQUERY EASING-->
+   <script src="vendor/jquery.easing/js/jquery.easing.js"></script>
+   <!-- ANIMO-->
+   <script src="vendor/animo.js/animo.js"></script>
+   <script src="vendor/parsley/parsley.min.js"></script>
+   <script src="vendor/sweetalert/dist/sweetalert.min.js"></script>
+   <!-- LOCALIZE-->
+   <script src="vendor/jquery-localize-i18n/dist/jquery.localize.js"></script>
+   <script src="vendor/datepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+   <!-- =============== PAGE VENDOR SCRIPTS ===============-->
+   <!-- =============== APP SCRIPTS ===============-->
+   <script src="app/js/app.js"></script>
+   <script src="js/department.js"></script>
+</body>
+
+</html>

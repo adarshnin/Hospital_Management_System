@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>HospitalManagementSystem</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+
+    <!-- =============== VENDOR STYLES ===============-->
+    <!-- FONT AWESOME-->
+
+    <!-- =============== PAGE VENDOR STYLES ===============-->
+    <!-- =============== BOOTSTRAP STYLES ===============-->
+    <!-- =============== APP STYLES ===============-->
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Float four columns side by side */
+        .column {
+            float: left;
+            position: relative;
+            left: 27%;
+            width: 25%;
+            padding: 0 10px;
+        }
+
+        /* Remove extra left and right margins, due to padding */
+        .row {
+            margin: 0 -5px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive columns */
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Style the counter cards */
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: center;
+            font-size: 29px;
+
+
+        }
+
+
+        body {
+            background-image: url("images/light.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topnavbar-wrapper">
+        <!-- START Top Navbar-->
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+               <div class="navbar-header">
+                  <a class="navbar-brand" href="/"><b>Hospital Management System</b></a>
+               </div>
+               <ul class="nav navbar-nav">
+                  <li class="active"><a href="/"><b>Home</b></a></li>
+               </ul>
+               <ul class="nav navbar-nav navbar-right">
+                  <li class="active"><a href="about_us.html"><b>Creators</b></a></li>
+               </ul>
+            </div>
+         </nav>
+        <!-- END Top Navbar-->
+    </header>
+    <div class="content-heading">
+        <center>
+            <h1 style="color:lightgray;">Creators</h1><br><br><br>
+        </center>
+        <small data-localize="dashboard.WELCOME"></small>
+    </div>
+
+
+    <div class="column">
+        <div class="card text-white bg-dark mb-3" style="max-width: 36rem;background-color: lightgray;">
+            <div class="card-body">
+                <div class="card-title"><i class="fa fa-user"></i>&nbsp;   &nbsp;Adarsh Ninganur</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card text-white bg-dark mb-3" style="max-width: 36rem;background-color: lightgray;">
+            <div class="card-body">
+                <div class="card-title"><i class="fa fa-user"></i>&nbsp;   &nbsp;Aryan Prasad</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
