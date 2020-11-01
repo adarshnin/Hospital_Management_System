@@ -2,23 +2,23 @@
 
 **Team:**
 
-Adarsh Ninganur - 111803115
+Adarsh Ninganur
 
-Aryan Prasad - 111803116
+Aryan Prasad
 
-Project Statement:
+**Project Statement:**
 
 Hospital Management System is a tool which can be used to store, retrieve information about the different patients, their procedures, doctors, etc. Not only it stores information but also provides different methods to retrieve information. For e.g., getting the details of a patient(his procedures, address, appointments, phone number, etc.). This makes the retrieval of information quick, which not only saves time but also helps in smooth functioning of the hospital.
 
-Introduction:
+**Introduction:**
 
 Hospital Management System handles the basic management of the patient and doctor database, for the smooth functioning of the hospital, helping them to retrieve information easily and adding new information to the database.
 
-FrontEnd: HTML, CSS, BootStrap
+**FrontEnd:** HTML, CSS, BootStrap
 
-BackEnd: Flask, SQLite(Database), JavaScript, Python
+**BackEnd:** Flask, SQLite(Database), JavaScript, Python
 
-Functional Requirements:
+**Functional Requirements:**
 
 ● Patient's, Doctor's, Nurse’s data can be accessed in their respective tables.
 
